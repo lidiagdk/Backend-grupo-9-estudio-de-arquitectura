@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificacion de proyecto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-4">Modificacion de proyecto</h1>
+
+        <form action="/guardar_proyecto" method="POST">
+
+            <div class="mb-3 row">
+                <label for="id_proyecto" class="col-sm-2 col-form-label">Id del proyecto:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="id_proyecto" id="id_proyecto" class="form-control border-dark" 
+                    value="{{data_jinja_one_proyecto[0]}}" readonly disabled>
+                </div>
+            </div>
+            
+            <div class="mb-3 row">
+                <label for="Nombre_proyecto" class="col-sm-2 col-form-label">Nombre del proyecto:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="Nombre_proyecto" id="Nombre_proyecto" class="form-control border-dark"
+                        value="{{data_jinja_one_proyecto[1]}}" placeholder="Ingrese el nombre del proyecto">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="Ubicacion" id="Ubicacion" class="form-control border-dark"
+                        value="{{data_jinja_one_proyecto[2]}}">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="Inicio_obra" class="form-label">Fecha de inicio de la obra:</label>
+                    <input type="date" name="Inicio_obra" id="Inicio_obra" class="form-control border-dark "
+                        value="{{data_jinja_one_proyecto[3]}}" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="Final_obra" class="form-label">Fecha de finalización de la obra:</label>
+                    <input type="date" name="Final_obra" id="Final_obra" class="form-control border-dark"
+                        value="{{data_jinja_one_proyecto[4]}}" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Descripcion" class="form-label">Descripción (máximo 30 palabras):</label>
+                <textarea name="Descripcion" id="Descripcion" class="form-control border-dark" maxlength="200" 
+                required>{{ data_jinja_one_proyecto[5] }}</textarea>
+                <small class="form-text text-muted">Se permite un máximo de 200 caracteres (aproximadamente 30
+                    palabras).</small>
+            </div>
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Modificar proyecto</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
